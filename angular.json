@@ -12,12 +12,10 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": {
-              "base": "./dist",
-              "browser": "."
-            },
-            "assets":[
-               "./assets"
+            "outputPath": "dist/app",
+            "baseHref": "./",
+            "assets": [
+              "assets"
             ],
             "browser": "index.tsx",
             "tsConfig": "tsconfig.json"
@@ -25,14 +23,8 @@
           "configurations": {
             "production": {
               "outputHashing": "all"
-            },
-            "development": {
-              "optimization": false,
-              "extractLicenses": false,
-              "sourceMap": true
             }
-          },
-          "defaultConfiguration": "production"
+          }
         },
         "serve": {
           "builder": "@angular/build:dev-server",
@@ -48,6 +40,9 @@
             }
           },
           "defaultConfiguration": "development"
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
