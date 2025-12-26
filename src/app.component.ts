@@ -1,27 +1,13 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { NavbarComponent } from './components/navbar.component';
-import { HeroComponent } from './components/hero.component';
-import { ServicesComponent } from './components/services.component';
-import { PackagesComponent } from './components/packages.component';
-import { GalleryComponent } from './components/gallery.component';
-import { ContactComponent } from './components/contact.component';
-import { FooterComponent } from './components/footer.component';
-import { TestimonialsComponent } from './components/testimonials.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    NavbarComponent,
-    HeroComponent,
-    ServicesComponent,
-    PackagesComponent,
-    GalleryComponent,
-    TestimonialsComponent,
-    ContactComponent,
-    FooterComponent
+    RouterModule
   ],
-  templateUrl: './app.component.html',
+  template: `<router-outlet></router-outlet>`,
   styleUrls: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

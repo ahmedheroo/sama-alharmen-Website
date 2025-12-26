@@ -1,7 +1,9 @@
 import { Component, ChangeDetectionStrategy, ElementRef, ViewChild, AfterViewInit, signal } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-packages',
+  imports: [RouterModule],
   standalone: true,
   template: `
     <section #sectionRef class="py-20 bg-gray-50 transition-all duration-1000 ease-out transform"
@@ -49,7 +51,7 @@ import { Component, ChangeDetectionStrategy, ElementRef, ViewChild, AfterViewIni
                 <span class="text-gray-600">نقل بباصات حديثة</span>
               </li>
             </ul>
-            <a href="#contact"  (click)="scrollTo($event, 'contact')"class="block w-full py-3 bg-[#52DE4B] text-gray-900 font-bold text-center rounded-lg hover:bg-opacity-90 transition-colors">
+            <a routerLink="/reservation" class="block w-full py-3 bg-[#52DE4B] text-gray-900 font-bold text-center rounded-lg hover:bg-opacity-90 transition-colors">
               احجز الآن
             </a>
           </div>
@@ -92,7 +94,7 @@ import { Component, ChangeDetectionStrategy, ElementRef, ViewChild, AfterViewIni
                 <span class="text-gray-300">عروض خاصة للعائلات</span>
               </li>
             </ul>
-            <a href="#contact"  (click)="scrollTo($event, 'contact')"class="block w-full py-3 bg-[#F1E100] text-gray-900 font-bold text-center rounded-lg hover:bg-yellow-400 transition-colors">
+            <a routerLink="/reservation" class="block w-full py-3 bg-[#F1E100] text-gray-900 font-bold text-center rounded-lg hover:bg-yellow-400 transition-colors">
               احجز الآن
             </a>
           </div>
@@ -126,7 +128,7 @@ import { Component, ChangeDetectionStrategy, ElementRef, ViewChild, AfterViewIni
                 <span class="text-gray-600">خدمة عملاء VIP</span>
               </li>
             </ul>
-            <a href="#contact"  (click)="scrollTo($event, 'contact')"class="block w-full py-3 bg-gray-100 text-gray-800 font-bold text-center rounded-lg hover:bg-gray-200 transition-colors border border-gray-200">
+            <a href="#contact"  (click)="scrollTo($event, 'contact')" class="block w-full py-3 bg-gray-100 text-gray-800 font-bold text-center rounded-lg hover:bg-gray-200 transition-colors border border-gray-200">
               تواصل للتفاصيل
             </a>
           </div>

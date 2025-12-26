@@ -1,10 +1,10 @@
 import { Component, ChangeDetectionStrategy, ElementRef, ViewChild, AfterViewInit, signal } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
-
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [NgOptimizedImage],
+  imports: [NgOptimizedImage, RouterModule],
   template: `
     <section #sectionRef class="py-20 bg-white transition-all duration-1000 ease-out transform"
       [class.opacity-0]="!isVisible()"
@@ -57,7 +57,7 @@ import { NgOptimizedImage } from '@angular/common';
                   <span class="text-[#52DE4B]">✓</span> واي فاي وخدمات ضيافة
                 </li>
               </ul>
-              <a href="#contact" (click)="scrollTo($event, 'contact')" class="inline-block w-full text-center py-3 bg-gray-50 text-gray-800 font-bold rounded-lg border border-gray-200 hover:bg-[#F1E100] hover:border-[#F1E100] transition-colors">
+              <a routerLink="/reservation" class="inline-block w-full text-center py-3 bg-gray-50 text-gray-800 font-bold rounded-lg border border-gray-200 hover:bg-[#F1E100] hover:border-[#F1E100] transition-colors">
                 احجز مقعدك الآن
               </a>
             </div>
